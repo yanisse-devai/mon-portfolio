@@ -1,0 +1,87 @@
+name: Validate & Deploy
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    name: Validate files
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check index.html exists
+        run: |
+          if [ ! -f index.html ]; then
+            echo "❌ index.html introuvable"
+            exit 1
+          fi
+          echo "✅ index.html présent"
+
+      - name: Check JS syntax
+        run: |
+          for f in js/*.js; do
+            node --check "$f" && echo "✅ $f" || { echo "❌ Erreur de syntaxe dans $f"; exit 1; }
+          done
+
+      - name: Check CSS syntax (balanced braces)
+        run: |
+          for f in css/*.css; do
+            open=$(grep -o '{' "$f" | wc -l)
+            close=$(grep -o '}' "$f" | wc -l)
+            if [ "$open" -ne "$close" ]; then
+              echo "❌ $f — accolades non équilibrées ($open ouvrantes, $close fermantes)"
+              exit 1
+            fi
+            echo "✅ $f ($open paires d'accolades)"
+          done
+
+      - name: Check HTML unclosed tags
+        run: |
+          errors=0
+          for tag in div section article header footer nav main aside ul ol li; do
+            open=$(grep -oi "<${tag}[ >]" index.html | wc -l)
+            close=$(grep -oi "</${tag}>" index.html | wc -l)
+            if [ "$open" -ne "$close" ]; then
+              echo "❌ <$tag> : $open ouvertures, $close fermetures"
+              errors=$((errors + 1))
+            else
+              echo "✅ <$tag> équilibré ($open)"
+            fi
+          done
+          [ "$errors" -eq 0 ] || exit 1
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: validate
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
