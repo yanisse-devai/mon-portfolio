@@ -1,0 +1,60 @@
+{
+  "projects": [
+    {
+      "title": "Chatbot Teams × Airtable",
+      "description": "Chatbot interne accessible via Microsoft Teams permettant aux équipes pédagogiques, communication et RH de Médéric d'interroger 19 tables Airtable (1700+ enregistrements) — sans connaissance technique.",
+      "tags": ["N8N", "Microsoft Teams", "Airtable", "Gemini 2.5", "Azure AD"],
+      "url": "https://github.com/yanisse-devai/mederic-teams-airtable-ai-agent",
+      "newTab": true,
+      "lastUpdated": "2026-04-15"
+    },
+    {
+      "title": "Chatbot RAG Médéric",
+      "description": "Chatbot RAG qui répond aux questions des élèves, professeurs et visiteurs de l'École Médéric — sourcé sur le site web et le règlement intérieur, zéro hallucination, disponible 24h/24.",
+      "tags": ["N8N", "Supabase", "Gemini Flash", "OpenAI", "RAG"],
+      "url": "https://github.com/yanisse-devai/mederic-rag-school-assistant",
+      "newTab": true,
+      "lastUpdated": "2026-04-15"
+    },
+    {
+      "title": "Réponse automatique appels manqués",
+      "description": "Workflow no-code qui envoie automatiquement un SMS structuré à chaque appel manqué d'un collaborateur Médéric — zéro action manuelle, réponse en moins de 30 secondes.",
+      "tags": ["N8N", "SMS", "No-code", "Automatisation"],
+      "url": "https://github.com/yanisse-devai/missed-call-sms-autoresponder",
+      "newTab": true,
+      "lastUpdated": "2026-04-15"
+    },
+    {
+      "title": "Gestionnaire de prêts PC",
+      "description": "Workflow N8N qui automatise 100% du cycle d'emprunt d'ordinateurs portables — vérification du stock, validation/refus automatique, mail de réponse et invitation Outlook Calendar.",
+      "tags": ["N8N", "Outlook", "Automatisation", "No-code"],
+      "url": "https://github.com/yanisse-devai/mederic-laptop-loan-manager",
+      "newTab": true,
+      "lastUpdated": "2026-04-15"
+    },
+    {
+      "title": "Filliz → Sage 50",
+      "description": "Workflow d'automatisation intelligent qui transforme, vérifie et livre les fichiers de facturation Filliz au format Sage 50 — sans que le pôle comptabilité n'ouvre Excel une seule fois.",
+      "tags": ["N8N", "Claude Sonnet 4", "JavaScript", "Outlook", "Teams"],
+      "url": "https://github.com/yanisse-devai/filliz-sage50-ai-automation",
+      "newTab": true,
+      "lastUpdated": "2026-04-15"
+    },
+    {
+      "title": "TrendJacking Instagram",
+      "description": "Agent IA qui scrape, analyse et livre 3 templates de contenu Instagram prêts à reproduire (Reels, Carrousels, Photos) — 3x/semaine, 0h de veille manuelle, moins de 5$/mois.",
+      "tags": ["N8N", "Apify", "Gemini", "Google Sheets", "Gmail"],
+      "url": "https://github.com/yanisse-devai/instagram-trend-jacking-agent",
+      "newTab": true,
+      "lastUpdated": "2026-04-13"
+    },
+    {
+      "title": "Agent Airbnb",
+      "description": "Agent IA autonome qui détecte, qualifie et répond aux questions récurrentes des voyageurs Airbnb — transports, équipements, adresses — sans intervention manuelle dans 80% des cas.",
+      "tags": ["N8N", "GPT-4o", "Perplexity", "Google Docs", "Outlook"],
+      "url": "https://github.com/yanisse-devai/airbnb-ai-guest-assistant",
+      "newTab": true,
+      "lastUpdated": "2026-04-10"
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yanisse Kemel — Product Manager IA</title>
+  <meta name="description" content="Portfolio de Yanisse Kemel, Product Manager IA — projets d'automatisation IA : chatbots RAG, agents N8N, workflows Airtable et Instagram.">
+  <meta property="og:title" content="Yanisse Kemel — Product Manager IA">
+  <meta property="og:description" content="Projets d'automatisation IA et de Product Management : RAG, agents LLM, N8N, Gemini, Claude.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <script>
+    /* Inline theme init — must run before CSS to avoid flash */
+    (function () {
+      var saved = localStorage.getItem('portfolio-theme');
+      var theme = saved || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+      if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+    }());
+  </script>
+  <link rel="preload" href="css/style.css" as="style">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* CSS critique — évite le flash de fond blanc avant le chargement du fichier externe */
+    body { background-color: #0a0a0a; color: #e0e0e0; }
+    [data-theme="light"] body { background-color: #ffffff; color: #1a1a1a; }
+  </style>
+</head>
+<body>
+
+  <a href="#hero" class="skip-link">Aller au contenu principal</a>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="#hero" class="nav-logo" aria-label="Yanisse Kemel — Accueil">YK</a>
+      <div class="nav-controls">
+        <ul class="nav-links">
+          <li><a href="#about">À propos</a></li>
+          <li><a href="#projects">Projets</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="nav-theme-toggle" aria-label="Activer le mode clair" aria-pressed="false">
+          <span class="theme-icon theme-icon--sun" aria-hidden="true">☀</span>
+          <span class="theme-icon theme-icon--moon" aria-hidden="true">☾</span>
+        </button>
+        <button class="nav-hamburger" aria-label="Ouvrir le menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+    <div class="nav-mobile" aria-label="Navigation mobile" aria-hidden="true">
+      <ul class="nav-mobile__links">
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#projects">Projets</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+    <section id="hero" class="section-hero">
+      <div class="container">
+        <h1 class="hero-title">Yanisse Kemel</h1>
+        <p class="hero-subtitle">Développeur en formation</p>
+        <p class="hero-description">J'apprends en construisant. Voici ce que j'ai fait jusqu'ici.</p>
+        <a href="#projects" class="btn-primary">Voir mes projets</a>
+      </div>
+    </section>
+
+    <section id="about" class="section-about">
+      <div class="container">
+        <h2 class="section-title">À propos</h2>
+        <div class="about__grid">
+          <div class="about__photo">
+            <span>Photo</span>
+          </div>
+          <div class="about__content">
+            <p class="about__text">Passionné par la technologie et l'intelligence artificielle, j'apprends à construire des projets concrets en utilisant les outils les plus avancés du marché. Ce portfolio est lui-même construit avec Claude Code.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section-projects">
+      <div class="container">
+        <h2 class="section-title">Mes Projets</h2>
+        <p id="projects-status" class="sr-only" aria-live="polite"></p>
+        <div class="projects-grid" id="projects-grid"></div>
+      </div>
+    </section>
+
+    <section id="contact" class="section-contact">
+      <div class="container">
+        <h2 class="section-title">Me contacter</h2>
+        <p class="section-text">Disponible pour des missions PM IA, conseil en automatisation ou échanges sur des projets ambitieux.</p>
+        <form class="contact-form" action="#" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="contact-name">Nom</label>
+            <input class="form-field" type="text" id="contact-name" name="name" placeholder="Votre nom" autocomplete="name" required aria-required="true">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="contact-email">Email</label>
+            <input class="form-field" type="email" id="contact-email" name="email" placeholder="votre@email.com" autocomplete="email" required aria-required="true">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="contact-message">Message</label>
+            <textarea class="form-field form-field--textarea" id="contact-message" name="message" placeholder="Votre message..." rows="5" required aria-required="true"></textarea>
+          </div>
+          <div id="form-feedback" role="alert" aria-live="assertive" class="form-feedback"></div>
+          <button type="submit" class="btn-accent">Envoyer</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <ul class="footer-links">
+        <li><a href="https://github.com/yanisse-devai" target="_blank" rel="noopener" aria-label="GitHub (ouvre un nouvel onglet)">GitHub</a></li>
+        <li><a href="#" aria-label="LinkedIn (bientôt disponible)">LinkedIn</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2026 Yanisse Kemel</p>
+      <p class="footer-built">Construit avec Claude Code</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
