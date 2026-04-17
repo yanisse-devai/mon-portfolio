@@ -188,18 +188,23 @@ function revealElements(elements) {
 }());
 
 /* ----------------------------------------------------------
-   Contact form — validation et feedback accessible
+   Contact form — validation et envoi via Formspree
+   Remplacer FORMSPREE_ENDPOINT par votre endpoint après
+   inscription sur formspree.io (ex. https://formspree.io/f/xrgwjlkb)
    ---------------------------------------------------------- */
 (function () {
+  var FORMSPREE_ENDPOINT = 'https://formspree.io/f/mdayeqgy';
+
   var form = document.querySelector('.contact-form');
   var feedback = document.getElementById('form-feedback');
   if (!form || !feedback) return;
 
-  form.addEventListener('submit', function (e) {
+  form.addEventListener('submit', async function (e) {
     e.preventDefault();
     var name = document.getElementById('contact-name');
     var email = document.getElementById('contact-email');
     var message = document.getElementById('contact-message');
+    var submitBtn = form.querySelector('[type="submit"]');
     var errors = [];
 
     // Reset états précédents
@@ -232,10 +237,33 @@ function revealElements(elements) {
       feedback.className = 'form-feedback form-feedback--error';
       var firstInvalid = form.querySelector('[aria-invalid="true"]');
       if (firstInvalid) firstInvalid.focus();
-    } else {
-      feedback.textContent = 'Message envoyé avec succès. Merci !';
-      feedback.className = 'form-feedback form-feedback--success';
-      form.reset();
+      return;
+    }
+
+    // Envoi via Formspree
+    submitBtn.disabled = true;
+    feedback.textContent = 'Envoi en cours…';
+    feedback.className = 'form-feedback form-feedback--loading';
+
+    try {
+      var response = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form)
+      });
+
+      if (response.ok) {
+        feedback.textContent = 'Message envoyé avec succès. Merci !';
+        feedback.className = 'form-feedback form-feedback--success';
+        form.reset();
+      } else {
+        throw new Error('Erreur serveur');
+      }
+    } catch {
+      feedback.textContent = 'Envoi échoué. Réessayez ou écrivez directement à yanissekemel@gmail.com.';
+      feedback.className = 'form-feedback form-feedback--error';
+    } finally {
+      submitBtn.disabled = false;
     }
   });
 }());

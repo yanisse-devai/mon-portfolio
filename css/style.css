@@ -14,7 +14,7 @@
   --color-bg-alpha:   rgba(10, 10, 10, 0.85);
   --color-surface:    #141414;
   --color-text:       #e0e0e0;
-  --color-text-muted: #888888;
+  --color-text-muted: #9a9a9a;
   --color-border:     #2a2a2a;
   --color-accent:     #64ffda;
   --color-on-accent:  #0a0a0a;
@@ -610,6 +610,17 @@ p { color: var(--color-text-muted); }
 }
 
 /* Feedback du formulaire de contact */
+.form-required {
+  color: #ff6b6b;
+  margin-left: 2px;
+}
+
+.form-required-note {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2);
+}
+
 .form-feedback {
   font-size: var(--font-size-sm);
 }
@@ -627,6 +638,16 @@ p { color: var(--color-text-muted); }
 .form-feedback--success {
   color: var(--color-accent);
   border-left-color: var(--color-accent);
+}
+
+.form-feedback--loading {
+  color: var(--color-text-muted);
+  border-left-color: var(--color-border);
+}
+
+.btn-accent:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 /* ----------------------------------------------------------
