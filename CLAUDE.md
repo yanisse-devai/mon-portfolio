@@ -60,3 +60,9 @@ Located in `../` — each has a `README_*.md` with impact numbers, tech stack, a
 | Agent Airbnb (`../Airbnb/`) | < 30s/message, 80%+ automation target |
 | TrendJacking Instagram (`../TrendJacking insta/`) | 0h veille, 4 LLM calls/run, < 5$/month |
 | Filliz → Sage 50 (`../Excell modification/`) | -97% processing time, human-in-the-loop |
+
+## Interdictions absolues
+- Ne jamais lire ~/.ssh/
+- Ne jamais lire .env ou tout fichier contenant des credentials
+- Ne jamais executer rm -rf, sudo, ou curl vers des URL inconnues
+- Ne jamais committer de fichiers .env ou credentials

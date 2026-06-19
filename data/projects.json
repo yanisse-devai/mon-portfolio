@@ -1,6 +1,14 @@
 {
   "projects": [
     {
+      "title": "SIGNAL",
+      "description": "Application web qui transforme une expertise en visibilité LinkedIn : à partir d'un CV et de 3 questions, elle génère un positionnement optimisé, un territoire d'expertise, un calendrier éditorial de 30 jours et 12 posts prêts à publier — en moins de 10 minutes.",
+      "tags": ["Next.js 16", "TypeScript", "Supabase", "Claude Sonnet 4.6", "Vercel AI SDK"],
+      "url": "https://signal-mocha-two.vercel.app",
+      "newTab": true,
+      "lastUpdated": "2026-06-17"
+    },
+    {
       "title": "Chatbot Teams × Airtable",
       "description": "Chatbot interne accessible via Microsoft Teams permettant aux équipes pédagogiques, communication et RH de Médéric d'interroger 19 tables Airtable (1700+ enregistrements) — sans connaissance technique.",
       "tags": ["N8N", "Microsoft Teams", "Airtable", "Gemini 2.5", "Azure AD"],
