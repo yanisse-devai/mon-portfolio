@@ -505,6 +505,13 @@ p { color: var(--color-text-muted); }
   border-color: var(--color-text-muted);
 }
 
+.project-card__private {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.05em;
+  align-self: flex-start;
+}
+
 /* ----------------------------------------------------------
    12. Contact form
    ---------------------------------------------------------- */

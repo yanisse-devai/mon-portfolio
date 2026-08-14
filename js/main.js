@@ -158,6 +158,10 @@ function revealElements(elements) {
     var date = p.lastUpdated
       ? '<p class="project-card__date">Mis à jour le ' + formatDate(p.lastUpdated) + '</p>'
       : '';
+    // Sans url (dépôt privé ou non publié), la carte remplace le lien par une mention
+    var action = p.url
+      ? '<a href="' + esc(p.url) + '"' + attrs + ' class="project-card__link" aria-label="' + label + '">Voir le projet</a>'
+      : '<p class="project-card__private">Code privé — démo sur demande</p>';
     return (
       '<article class="project-card">' +
         '<div class="project-card__banner"></div>' +
@@ -166,7 +170,7 @@ function revealElements(elements) {
           '<p class="project-card__desc">' + esc(p.description) + '</p>' +
           date +
           '<ul class="project-card__tags">' + tags + '</ul>' +
-          '<a href="' + esc(p.url) + '"' + attrs + ' class="project-card__link" aria-label="' + label + '">Voir le projet</a>' +
+          action +
         '</div>' +
       '</article>'
     );

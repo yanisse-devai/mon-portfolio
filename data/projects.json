@@ -1,12 +1,50 @@
 {
   "projects": [
     {
+      "title": "Panorama IA",
+      "description": "Blog IA francophone qui s'auto-alimente : les articles sont du Markdown versionné, chaque commit déclenche un rebuild, et publier revient à basculer un champ « brouillon » à false. Aucun back-office à maintenir, hébergement gratuit.",
+      "tags": ["Astro", "Tailwind CSS v4", "Markdown", "Cloudflare Pages", "TypeScript"],
+      "url": "https://panoramaia.com",
+      "newTab": true,
+      "lastUpdated": "2026-08-13"
+    },
+    {
+      "title": "Extraction de factures PDF",
+      "description": "Pipeline qui lit des factures fournisseurs — scannées ou au texte corrompu — et produit un JSON typé. Quand un champ n'est pas lisible de façon fiable, il vaut null et porte un avertissement : le pipeline ne comble jamais un trou par une valeur plausible.",
+      "tags": ["Python", "Mistral OCR", "Pydantic", "React", "Zod"],
+      "lastUpdated": "2026-07-29"
+    },
+    {
+      "title": "MiddleFame",
+      "description": "Marketplace qui connecte marques et créateurs de contenu : Creator Score et tarif recommandé calculés depuis les données sociales, matching expliqué critère par critère, et paiements sécurisés par séquestre avec commission de 15 % côté marque.",
+      "tags": ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Shopify Webhooks"],
+      "lastUpdated": "2026-07-22"
+    },
+    {
+      "title": "ATS Matcher",
+      "description": "Moteur qui confronte un CV à une offre d'emploi : score ATS déterministe et auditable — aucun LLM dans le calcul — écarts priorisés, puis CV optimisé en DOCX et PDF. Des garde-fous testés interdisent d'inventer une compétence, un diplôme ou de modifier une date.",
+      "tags": ["Python", "Claude", "Streamlit", "python-docx", "pytest"],
+      "lastUpdated": "2026-07-21"
+    },
+    {
+      "title": "1%",
+      "description": "Application mobile qui traite la progression personnelle comme un personnage à construire : niveau global, stats par domaine et momentum qui ralentit au lieu de se réinitialiser. L'IA compose le plan de micro-actions à l'onboarding — l'utilisateur ne crée presque jamais ses habitudes à la main.",
+      "tags": ["Flutter", "Dart", "IA générative", "Product Design", "PRD"],
+      "lastUpdated": "2026-07-21"
+    },
+    {
       "title": "SIGNAL",
       "description": "Application web qui transforme une expertise en visibilité LinkedIn : à partir d'un CV et de 3 questions, elle génère un positionnement optimisé, un territoire d'expertise, un calendrier éditorial de 30 jours et 12 posts prêts à publier — en moins de 10 minutes.",
       "tags": ["Next.js 16", "TypeScript", "Supabase", "Claude Sonnet 4.6", "Vercel AI SDK"],
       "url": "https://signal-mocha-two.vercel.app",
       "newTab": true,
       "lastUpdated": "2026-06-17"
+    },
+    {
+      "title": "Instant Translate",
+      "description": "Spike technique de traduction en temps réel : l'audio du micro ou du système part en transcription streaming, la traduction arrive en flux et s'affiche dans un overlay appelable au clavier. Un mini-benchmark STT intégré arbitre entre Whisper et Deepgram sur des transcriptions de référence.",
+      "tags": ["Python", "Deepgram", "Claude", "PySide6", "Streaming"],
+      "lastUpdated": "2026-04-19"
     },
     {
       "title": "Chatbot Teams × Airtable",
